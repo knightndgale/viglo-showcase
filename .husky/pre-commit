@@ -20,7 +20,6 @@ yarn lint ||
                #    #    # #    # #   "m        #      #    # #    # #              "# #     # #      #  #m      "#  
                #     #mm#  "mmmm" #    "         "mmm"  #mm#  #mmm"  #mmmmm     "mmm#"  "mmmm"  "mmm" #   "m "mmm#"      
       
-      
       '  
     
       echo '🔨❌ Yoo, you have a problem in your code. Check linter 🔨❌
