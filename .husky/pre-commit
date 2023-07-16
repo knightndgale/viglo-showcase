@@ -8,17 +8,24 @@ echo 'please be patient, this may take a while...'
 # Check ESLint Standards
 yarn lint ||
 (
-    echo 'm     m  mmmm  m    m mmmmm           mmm   mmmm  mmmm   mmmmmm       mmmm  m    m   mmm  m    m  mmmm 
-          "m   m" m"  "m #    # #   "#        m"   " m"  "m #   "m #           #"   " #    # m"   " #  m"  #"   "
-            "#"   #    # #    # #mmmm"        #      #    # #    # #mmmmm     "#mmm   #    # #      #m#    "#mmm   
-             #    #    # #    # #   "m        #      #    # #    # #               "# #    # #      #  #m      "#  
-             #     #mm#  "mmmm" #    "         "mmm"  #mm#  #mmm"  #mmmmm     "mmm#"  "mmmm"  "mmm" #   "m "mmm#"'  
+      echo '🏗️👷 Attempting to fix linting error👷‍♂️🏗️'
+      echo 'please be patient, this may take a while...'
+
+      yarn lint:fix ||
+      ( 
+      echo '            m     m  mmmm  m    m mmmmm           mmm   mmmm  mmmm   mmmmmm      mmmm  m     m   mmm  m    m  mmmm 
+            "m   m" m"  "m #    # #   "#        m"   " m"  "m #   "m #          #"   " #     # m"   " #  m"  #"   "
+              "#"   #    # #    # #mmmm"        #      #    # #    # #mmmmm     "#mmm  #     # #      #m#    "#mmm   
+               #    #    # #    # #   "m        #      #    # #    # #              "# #     # #      #  #m      "#  
+               #     #mm#  "mmmm" #    "         "mmm"  #mm#  #mmm"  #mmmmm     "mmm#"  "mmmm"  "mmm" #   "m "mmm#"'  
     
-    echo '🔨❌ Yoo, you have a problem in your code. Check linter 🔨❌
-          Run yarn lint, add changes and try commit again.';
+      echo '🔨❌ Yoo, you have a problem in your code. Check linter 🔨❌
+            Run yarn lint, add changes and try commit again.';
 
 
-    false;
+      false
+      )
+
 )
 
 echo '🎉 No error found: committing this now.... ✨🚀🏄‍♂️🍻'
