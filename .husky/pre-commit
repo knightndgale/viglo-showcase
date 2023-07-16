@@ -13,11 +13,15 @@ yarn lint ||
 
       yarn lint:fix ||
       ( 
-      echo '            m     m  mmmm  m    m mmmmm           mmm   mmmm  mmmm   mmmmmm      mmmm  m     m   mmm  m    m  mmmm 
+      echo '
+            m     m  mmmm  m    m mmmmm           mmm   mmmm  mmmm   mmmmmm      mmmm  m     m   mmm  m    m  mmmm 
             "m   m" m"  "m #    # #   "#        m"   " m"  "m #   "m #          #"   " #     # m"   " #  m"  #"   "
               "#"   #    # #    # #mmmm"        #      #    # #    # #mmmmm     "#mmm  #     # #      #m#    "#mmm   
                #    #    # #    # #   "m        #      #    # #    # #              "# #     # #      #  #m      "#  
-               #     #mm#  "mmmm" #    "         "mmm"  #mm#  #mmm"  #mmmmm     "mmm#"  "mmmm"  "mmm" #   "m "mmm#"'  
+               #     #mm#  "mmmm" #    "         "mmm"  #mm#  #mmm"  #mmmmm     "mmm#"  "mmmm"  "mmm" #   "m "mmm#"      
+      
+      
+      '  
     
       echo '🔨❌ Yoo, you have a problem in your code. Check linter 🔨❌
             Run yarn lint, add changes and try commit again.';
@@ -28,15 +32,19 @@ yarn lint ||
 
 )
 
+npx lint-staged
 
 echo '
    mmm   mmmm  mm   m   mmm  mmmmm    mm  mmmmmmm  mmmm
  m"   " m"  "m #"m  # m"   " #   "#   ##     #    #"   "
  #      #    # # #m # #   mm #mmmm"  #  #    #    "#mmm
  #      #    # #  # # #    # #   "m  #mm#    #        "#
-  "mmm"  #mm#  #   ##  "mmm" #    " #    #   #    "mmm#"'
+  "mmm"  #mm#  #   ##  "mmm" #    " #    #   #    "mmm#"
+  
+'
+
 
 echo '🎉 No error found: committing this now.... ✨🚀🏄‍♂️🍻'
 
-npx lint-staged
+
 
