@@ -62,7 +62,8 @@ export default function Home() {
 
           <a
             href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
+            clas
+            sName={styles.card}
             target="_blank"
             rel="noopener noreferrer"
           >
