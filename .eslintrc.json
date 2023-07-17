@@ -5,10 +5,7 @@
     "ecmaFeatures": {
       "tsx": true
     },
-    "ecmaVersion": "latest",
+    "ecmaVersion": 2022,
     "sourceType": "module"
-  },
-  "rules": {
-    "prettier/prettier": ["error"]
   }
 }
