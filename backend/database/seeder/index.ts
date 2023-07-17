@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import config from "../../../config/env";
 import TestModel from "../../models/TestModel/test.model";
 import TestData from "../../database/data/test.data";
+import config from "@/env";
 mongoose
   .connect(config.databaseURI)
   .then(async () => {

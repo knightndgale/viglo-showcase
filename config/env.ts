@@ -14,6 +14,7 @@ dotenv.config({
  * @type {Config}
  */
 const config = {
+  node_env: process.env.NODE_ENV || "development",
   endpoint: `/api`,
   databaseURI: process.env.DATABASE_URI || "mongodb://localhost:27017/viglo",
 };

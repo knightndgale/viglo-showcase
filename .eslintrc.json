@@ -1,6 +1,6 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "prettier"],
-  "plugins": ["prettier"],
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "plugin:@tanstack/eslint-plugin-query/recommended", "prettier"],
+  "plugins": ["@tanstack/query", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "tsx": true

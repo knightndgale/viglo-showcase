@@ -1,5 +1,5 @@
+import config from "@/env";
 import mongoose from "mongoose";
-import config from "../../config/env";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextHandler } from "next-connect";
 
