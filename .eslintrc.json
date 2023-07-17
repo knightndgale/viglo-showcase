@@ -1,7 +1,14 @@
 {
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "prettier"],
   "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "tsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": ["error"]
   }
 }
