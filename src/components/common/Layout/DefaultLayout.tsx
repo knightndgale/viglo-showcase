@@ -1,10 +1,14 @@
+import SignUpModal from "@/components/SignUpModal";
 import BackgroundProvider from "@/provider/background.provider";
 import theme from "@/theme";
+import useDisclosure from "@/useDisclosure";
 import { AppBar, Button, Stack, Toolbar } from "@mui/material";
 import Image from "next/image";
 import React, { PropsWithChildren } from "react";
 
 const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
+  const signUpModal = useDisclosure();
+
   return (
     <BackgroundProvider>
       <AppBar position="static">
@@ -16,13 +20,14 @@ const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
             <Button variant="text" sx={{ color: theme.palette.text.primary }}>
               Login
             </Button>
-            <Button variant="text" sx={{ color: theme.palette.text.primary }}>
+            <Button onClick={() => signUpModal.onOpen()} variant="text" sx={{ color: theme.palette.text.primary }}>
               Sign Up
             </Button>
           </Stack>
         </Toolbar>
       </AppBar>
       {children}
+      <SignUpModal open={signUpModal.isOpen} handleClose={() => signUpModal.onToggle()} />
     </BackgroundProvider>
   );
 };

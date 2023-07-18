@@ -9,7 +9,6 @@ import { palette } from "@/theme/palette";
 export default function Home() {
   const [phrase, setPhrase] = useState("");
   const isReminded = false; // make this into a useState
-
   const handlePhraseChange = (event: ChangeEvent<HTMLInputElement>) => {
     setPhrase(event.target.value);
   };
@@ -38,7 +37,7 @@ export default function Home() {
             <Grid item xs={11} sm={8} md={5} lg={4} display="flex" justifyContent="center" alignItems="center">
               <Card sx={{ width: "100%" }}>
                 <CardContent sx={{ paddingBottom: theme.spacing(1) }}>
-                  <Typography variant="body2" fontWeight={700} marginBottom={1}>
+                  <Typography variant="body1" fontWeight={700} marginBottom={1}>
                     Enter Spanish phrase here
                   </Typography>
                   <TextField
@@ -61,7 +60,7 @@ export default function Home() {
                       Generate Mnemonic
                     </Button>
                   </Box>
-                  <Typography variant="body2" fontWeight={700} marginBottom={1}>
+                  <Typography variant="body1" fontWeight={700} marginBottom={1}>
                     Generated Mnemonic
                   </Typography>
                   <TextField className="squared-text-field" fullWidth rows={10} multiline />
