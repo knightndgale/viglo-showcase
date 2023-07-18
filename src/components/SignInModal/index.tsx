@@ -12,24 +12,23 @@ interface ModalComponentProps {
   linkEvent?: () => void;
 }
 
-const SignUpModal: React.FC<ModalComponentProps> = ({ linkEvent, ...rest }) => {
+const SignInModal: React.FC<ModalComponentProps> = ({ linkEvent, ...rest }) => {
   return (
-    <ModalComponent {...rest} title="Let's setup your account">
+    <ModalComponent {...rest} title="Welcome Back!">
       <Box marginY={theme.spacing(2)}>
         <Stack spacing={3}>
-          <TextField id="rounded" variant="outlined" fullWidth label="Full Name" />
           <TextField id="rounded" variant="outlined" fullWidth label="Email" />
         </Stack>
         <Button fullWidth sx={{ marginTop: theme.spacing(5) }} variant="contained">
           Remind me next week
         </Button>
         <Stack marginTop={theme.spacing(2)} spacing={1} direction={"row"} justifyContent={"center"}>
-          <Typography variant="body1">Already have an account?</Typography>
-          <LinkTypography onClick={linkEvent}>Sign in here.</LinkTypography>
+          <Typography variant="body1">{"Don't you have an account?"}</Typography>
+          <LinkTypography onClick={linkEvent}>Sign up here.</LinkTypography>
         </Stack>
       </Box>
     </ModalComponent>
   );
 };
 
-export default SignUpModal;
+export default SignInModal;

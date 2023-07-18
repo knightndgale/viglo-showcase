@@ -17,12 +17,18 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ title, open, handleClos
       PaperProps={{
         sx: {
           borderRadius: "24px",
+          width: {
+            xs: "95%", //100% for xs and greater devices
+            sm: "65%", //80% for sm and greater devices
+            md: "40%", //60% for md and greater devices
+            lg: "40%", //50% for lg and greater devices
+          },
         },
       }}
     >
       <DialogTitle>
         <Grid container alignItems="start" spacing={2} sx={{ margin: "-8px" }}>
-          <Grid item xs={8}>
+          <Grid item xs={10}>
             <Typography
               variant={"h3"}
               sx={{
@@ -38,7 +44,7 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ title, open, handleClos
               {title}
             </Typography>
           </Grid>
-          <Grid display={"flex"} justifyContent={"end"} item xs={4} marginTop={theme.spacing(1)}>
+          <Grid display={"flex"} justifyContent={"end"} item xs={2}>
             <Button onClick={handleClose}>
               <Typography variant="h6" color={palette.text.muted} fontWeight={theme.typography.fontWeightMedium}>
                 Close

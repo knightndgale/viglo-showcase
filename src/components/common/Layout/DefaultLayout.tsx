@@ -1,3 +1,4 @@
+import SignInModal from "@/components/SignInModal";
 import SignUpModal from "@/components/SignUpModal";
 import BackgroundProvider from "@/provider/background.provider";
 import theme from "@/theme";
@@ -8,6 +9,17 @@ import React, { PropsWithChildren } from "react";
 
 const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const signUpModal = useDisclosure();
+  const signInModal = useDisclosure();
+
+  const onSignInModalLinkEvent = () => {
+    signInModal.onClose();
+    signUpModal.onOpen();
+  };
+
+  const onSignUpModalLinkEvent = () => {
+    signUpModal.onClose();
+    signInModal.onOpen();
+  };
 
   return (
     <BackgroundProvider>
@@ -17,7 +29,7 @@ const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
             <Image width={168} height={46} src={"/images/logo-full.png"} alt="viglo-logo" />
           </Button>
           <Stack direction="row" spacing={2}>
-            <Button variant="text" sx={{ color: theme.palette.text.primary }}>
+            <Button onClick={() => signInModal.onOpen()} variant="text" sx={{ color: theme.palette.text.primary }}>
               Login
             </Button>
             <Button onClick={() => signUpModal.onOpen()} variant="text" sx={{ color: theme.palette.text.primary }}>
@@ -27,7 +39,9 @@ const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
         </Toolbar>
       </AppBar>
       {children}
-      <SignUpModal open={signUpModal.isOpen} handleClose={() => signUpModal.onToggle()} />
+      <SignInModal linkEvent={onSignInModalLinkEvent} open={signInModal.isOpen} handleClose={() => signInModal.onToggle()} />
+
+      <SignUpModal linkEvent={onSignUpModalLinkEvent} open={signUpModal.isOpen} handleClose={() => signUpModal.onToggle()} />
     </BackgroundProvider>
   );
 };
