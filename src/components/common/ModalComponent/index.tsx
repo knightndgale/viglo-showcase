@@ -18,10 +18,10 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ title, open, handleClos
         sx: {
           borderRadius: "24px",
           width: {
-            xs: "95%", //100% for xs and greater devices
-            sm: "65%", //80% for sm and greater devices
-            md: "40%", //60% for md and greater devices
-            lg: "40%", //50% for lg and greater devices
+            xs: "95%",
+            sm: "65%",
+            md: "40%",
+            lg: "40%",
           },
         },
       }}
