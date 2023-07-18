@@ -8,7 +8,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "../utils/createEmotionCache";
 import { ThemeProvider } from "@mui/material/styles";
-import BackgroundProvider from "@/provider/background.provider";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,9 +23,7 @@ export default function App({ Component, pageProps, emotionCache = clientSideEmo
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <BackgroundProvider>
-            <Component {...pageProps} />
-          </BackgroundProvider>
+          <Component {...pageProps} />
         </ThemeProvider>
       </CacheProvider>
       {config.node_env !== "production" && <ReactQueryDevtools />}

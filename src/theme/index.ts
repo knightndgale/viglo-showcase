@@ -10,6 +10,9 @@ const theme = createTheme({
     button: {
       textTransform: "none",
     },
+    body2: {
+      color: palette.text.muted,
+    },
   },
   components: {
     MuiButton: {

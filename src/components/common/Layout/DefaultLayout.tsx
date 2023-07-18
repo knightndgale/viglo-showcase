@@ -1,3 +1,4 @@
+import BackgroundProvider from "@/provider/background.provider";
 import theme from "@/theme";
 import { AppBar, Button, Stack, Toolbar } from "@mui/material";
 import Image from "next/image";
@@ -5,7 +6,7 @@ import React, { PropsWithChildren } from "react";
 
 const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <>
+    <BackgroundProvider>
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Button color="inherit" aria-label="logo">
@@ -22,7 +23,7 @@ const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
         </Toolbar>
       </AppBar>
       {children}
-    </>
+    </BackgroundProvider>
   );
 };
 

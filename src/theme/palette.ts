@@ -16,5 +16,6 @@ export const palette = {
     disabled: "#A3ADD0",
     secondary: "#1B2459",
     primary: "#1A1C1E",
+    muted: "#A8A9A9",
   },
 };
