@@ -21,7 +21,7 @@ const RequestHandler = () => {
   testController("api/test", router);
 
   return router.handler({
-    onError: (err: any, req, res) => {
+    onError: (err: any) => {
       console.log("🚀 ~ RequestHandler ~ Error:", err);
       console.error(err.stack);
     },

@@ -1,5 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "plugin:@tanstack/eslint-plugin-query/recommended", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
+    "prettier"
+  ],
   "plugins": ["@tanstack/query", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
@@ -7,5 +12,8 @@
     },
     "ecmaVersion": 2022,
     "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": ["error", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_", "caughtErrorsIgnorePattern": "^_" }]
   }
 }

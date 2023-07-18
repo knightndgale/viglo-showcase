@@ -8,7 +8,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "../utils/createEmotionCache";
 import { ThemeProvider } from "@mui/material/styles";
-import { Box } from "@mui/material";
 import BackgroundProvider from "@/provider/background.provider";
 
 const clientSideEmotionCache = createEmotionCache();
@@ -18,11 +17,7 @@ export interface MyAppProps extends AppProps {
 }
 
 const queryClient = new QueryClient();
-const bgConfig = {
-  src: "images/circles-bg.png",
-  height: 7730,
-  width: 7730,
-};
+
 export default function App({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) {
   return (
     <QueryClientProvider client={queryClient}>
