@@ -5,9 +5,12 @@ import Head from "next/head";
 import FAB from "@/components/common/FAB";
 import DefaultLayout from "@/components/common/Layout/DefaultLayout";
 import { palette } from "@/theme/palette";
+import TutorialModal from "@/components/TutorialModal";
+import useDisclosure from "@/useDisclosure";
 
 export default function Home() {
   const [phrase, setPhrase] = useState("");
+  const { isOpen, onToggle, onClose } = useDisclosure();
   const isReminded = false; // make this into a useState
   const handlePhraseChange = (event: ChangeEvent<HTMLInputElement>) => {
     setPhrase(event.target.value);
@@ -32,7 +35,7 @@ export default function Home() {
       </Head>
       <main>
         <DefaultLayout>
-          <FAB />
+          <FAB onClick={onToggle} />
           <Grid container height="90vh" justifyContent="center">
             <Grid item xs={11} sm={8} md={5} lg={4} display="flex" justifyContent="center" alignItems="center">
               <Card sx={{ width: "100%" }}>
@@ -88,6 +91,7 @@ export default function Home() {
             </Grid>
           </Grid>
         </DefaultLayout>
+        <TutorialModal open={isOpen} handleClose={onClose} />
       </main>
     </>
   );

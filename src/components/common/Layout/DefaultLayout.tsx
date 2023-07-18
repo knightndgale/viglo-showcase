@@ -1,3 +1,4 @@
+import AuthorizationModal from "@/components/AuthorizationModal";
 import SignInModal from "@/components/SignInModal";
 import SignUpModal from "@/components/SignUpModal";
 import BackgroundProvider from "@/provider/background.provider";
@@ -10,6 +11,7 @@ import React, { PropsWithChildren } from "react";
 const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const signUpModal = useDisclosure();
   const signInModal = useDisclosure();
+  const authorizationModal = useDisclosure();
 
   const onSignInModalLinkEvent = () => {
     signInModal.onClose();
@@ -20,6 +22,9 @@ const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
     signUpModal.onClose();
     signInModal.onOpen();
   };
+
+  const resendCodeHandler = () => {};
+  const onSubmitEvent = () => {};
 
   return (
     <BackgroundProvider>
@@ -39,8 +44,13 @@ const DefaultLayout: React.FC<PropsWithChildren> = ({ children }) => {
         </Toolbar>
       </AppBar>
       {children}
+      <AuthorizationModal
+        onSubmitEvent={onSubmitEvent}
+        linkEvent={resendCodeHandler}
+        open={authorizationModal.isOpen}
+        handleClose={() => authorizationModal.onToggle()}
+      />
       <SignInModal linkEvent={onSignInModalLinkEvent} open={signInModal.isOpen} handleClose={() => signInModal.onToggle()} />
-
       <SignUpModal linkEvent={onSignUpModalLinkEvent} open={signUpModal.isOpen} handleClose={() => signUpModal.onToggle()} />
     </BackgroundProvider>
   );

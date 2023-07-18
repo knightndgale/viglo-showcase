@@ -1,9 +1,9 @@
 import React from "react";
 import { Dialog, DialogTitle, Typography, Grid, Button, DialogContent } from "@mui/material";
-import theme from "@/theme";
 import { palette } from "@/theme/palette";
+import { Close } from "@mui/icons-material";
 
-interface ModalComponentProps {
+interface BasicModalComponentProps {
   title: string;
   open: boolean;
   handleClose: () => void;
@@ -11,9 +11,8 @@ interface ModalComponentProps {
   isContentNoPadding?: boolean;
 }
 
-const ModalComponent: React.FC<ModalComponentProps> = ({ title, open, handleClose, children, isContentNoPadding = false }) => {
+const BasicModal: React.FC<BasicModalComponentProps> = ({ title, open, handleClose, children, isContentNoPadding = false }) => {
   const contentPadding = isContentNoPadding && { padding: 0 };
-
   return (
     <Dialog
       open={open}
@@ -31,25 +30,12 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ title, open, handleClos
     >
       <DialogTitle>
         <Grid container alignItems="start" spacing={2} sx={{ margin: "-8px" }}>
-          <Grid item xs={10}>
-            <Typography
-              variant={"h3"}
-              sx={{
-                fontWeight: "bold",
-                fontSize: {
-                  xs: "1.8rem",
-                  sm: "2rem",
-                  md: "2.5rem",
-                  lg: "3rem",
-                },
-              }}
-            >
-              {title}
-            </Typography>
+          <Grid item xs={10} sx={{ marginLeft: "-8px" }}>
+            <Typography variant={"body1"}>{title}</Typography>
           </Grid>
           <Grid display={"flex"} justifyContent={"end"} item xs={2}>
-            <Button onClick={handleClose}>
-              <Typography variant="h6" color={palette.text.muted} fontWeight={theme.typography.fontWeightMedium}>
+            <Button sx={{ padding: 0 }} onClick={handleClose} startIcon={<Close sx={{ color: palette.text.primary }} />}>
+              <Typography variant="body1" color={palette.text.primary}>
                 Close
               </Typography>
             </Button>
@@ -61,4 +47,4 @@ const ModalComponent: React.FC<ModalComponentProps> = ({ title, open, handleClos
   );
 };
 
-export default ModalComponent;
+export default BasicModal;

@@ -17,7 +17,7 @@ const SignInModal: React.FC<ModalComponentProps> = ({ linkEvent, ...rest }) => {
     <ModalComponent {...rest} title="Welcome Back!">
       <Box marginY={theme.spacing(2)}>
         <Stack spacing={3}>
-          <TextField id="rounded" variant="outlined" fullWidth label="Email" />
+          <TextField variant="outlined" fullWidth label="Email" />
         </Stack>
         <Button fullWidth sx={{ marginTop: theme.spacing(5) }} variant="contained">
           Remind me next week
