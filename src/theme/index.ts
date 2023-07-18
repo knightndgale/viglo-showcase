@@ -30,6 +30,7 @@ const theme = createTheme({
           props: { variant: "contained" },
           style: {
             ...buttonSharedStyle,
+            ...defaultInputBorderRadius,
             backgroundColor: palette.primary.main,
             ":hover": {
               backgroundColor: darken(palette.primary.main, 0.1),

@@ -33,7 +33,7 @@ export default function Home() {
         <DefaultLayout>
           <FAB />
           <Grid container height="90vh" justifyContent="center">
-            <Grid item xs={11} sm={8} md={6} lg={4} display="flex" justifyContent="center" alignItems="center">
+            <Grid item xs={11} sm={8} md={5} lg={4} display="flex" justifyContent="center" alignItems="center">
               <Card sx={{ width: "100%" }}>
                 <CardContent>
                   <Typography variant="body2" fontWeight={700} marginBottom={1}>
