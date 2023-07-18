@@ -29,7 +29,7 @@ export default function App({ Component, pageProps, emotionCache = clientSideEmo
           </BackgroundProvider>
         </ThemeProvider>
       </CacheProvider>
-      {config.node_env !== "production" && <ReactQueryDevtools position="bottom-right" />}
+      {config.node_env !== "production" && <ReactQueryDevtools />}
     </QueryClientProvider>
   );
 }
