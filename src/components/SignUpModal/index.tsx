@@ -21,7 +21,7 @@ const SignUpModal: React.FC<ModalComponentProps> = ({ linkEvent, ...rest }) => {
           <TextField id="rounded" variant="outlined" fullWidth label="Email" />
         </Stack>
         <Button fullWidth sx={{ marginTop: theme.spacing(5) }} variant="contained">
-          Remind me next week
+          Sign Up
         </Button>
         <Stack marginTop={theme.spacing(2)} spacing={1} direction={"row"} justifyContent={"center"}>
           <Typography variant="body1">Already have an account?</Typography>

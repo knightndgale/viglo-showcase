@@ -10,9 +10,10 @@ interface ModalComponentProps {
   open: boolean;
   handleClose: () => void;
   linkEvent?: () => void;
+  buttonText?: string;
 }
 
-const SignInModal: React.FC<ModalComponentProps> = ({ linkEvent, ...rest }) => {
+const SignInModal: React.FC<ModalComponentProps> = ({ linkEvent, buttonText = "Remind me next week", ...rest }) => {
   return (
     <ModalComponent {...rest} title="Welcome Back!">
       <Box marginY={theme.spacing(2)}>
@@ -20,7 +21,7 @@ const SignInModal: React.FC<ModalComponentProps> = ({ linkEvent, ...rest }) => {
           <TextField variant="outlined" fullWidth label="Email" />
         </Stack>
         <Button fullWidth sx={{ marginTop: theme.spacing(5) }} variant="contained">
-          Remind me next week
+          {buttonText}
         </Button>
         <Stack marginTop={theme.spacing(2)} spacing={1} direction={"row"} justifyContent={"center"}>
           <Typography variant="body1">{"Don't you have an account?"}</Typography>
